@@ -47,30 +47,23 @@ function createrobot(){
     field.appendChild(robot);   // Add div to the HTML document 
    // robot.classList.add("robotCSS");  // just a personal reminder on how to add CSS class to div
 
-    if (score >10 & score<20){
+    if (score >10 & score<40){
 
         time=800;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >20 & score<40){
+    if (score >40 & score<80){
 
         time=700;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >40 & score<80){
-
-        time=675;
-        clearInterval(interval);
-        interval=setInterval(createrobot,time);
-    } 
-
     if (score >80 & score<120){
 
-        time=650;
+        time=675;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
@@ -82,12 +75,20 @@ function createrobot(){
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >150){
+    if (score >150 & score<200){
 
         time=500;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
+
+    if (score >200){
+
+        time=300;
+        clearInterval(interval);
+        interval=setInterval(createrobot,time);
+    } 
+
 
     robot.onclick = function (){
     pop(robot);
@@ -105,8 +106,21 @@ function createrobot(){
    let size=35;
    robot.style.width=size+"px";
    robot.style.height=size+"px";
+   
+   let increaseSpeed=1
+   if (score>150 & score<180) { 
+    increaseSpeed=2
+   }
 
-   let speed=Math.floor(Math.random()*1)+1;
+   else if (score>180 & score<200) { 
+    increaseSpeed=3
+   }
+
+   else if (score>200) { 
+    increaseSpeed=4
+   }
+
+   let speed=Math.floor(Math.random()*increaseSpeed)+1;
    robot.speed=speed;
 
    let playWidth=playField.width-size;
@@ -173,7 +187,7 @@ function updateScore(){
         difficulty=hard;
     }
 
-    else if (time==600 || time==500 ) {
+    else if (time==600 || time==500  || time==300 ) {
 
         difficulty=hell;
     }
@@ -204,7 +218,7 @@ function animate(){
         top += robot.speed;
         robot.style.top=top+"px";    // This literally increase the the div style top hence push it further away from the top. 
 
-        if (top==playField.height){
+        if (top>=playField.height){
 
             if (lives>1){
 
@@ -212,6 +226,7 @@ function animate(){
 
             }
             
+            robots[robot.index]=null;
             lives-=1
             updateScore();    
         }
@@ -235,7 +250,6 @@ function animate(){
         requestAnimationFrame(animate);
     }
 }
-
 
 function gameOver(){
     showButton(true);
