@@ -7,7 +7,6 @@ let scoreDiv=document.getElementById("score");
 let time=1000;
 let alertStatus;
 let difficulty;
-
 let playField={
     width:400,
     height:500
@@ -37,7 +36,6 @@ function showButton(show){
     }
 
     else{
-
         button.style.display="none";
     }
 }
@@ -48,47 +46,40 @@ function createrobot(){
    // robot.classList.add("robotCSS");  // just a personal reminder on how to add CSS class to div
 
     if (score >10 & score<40){
-
         time=800;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
     if (score >40 & score<80){
-
         time=700;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
     if (score >80 & score<100){
-
         time=650;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
     if (score >100 & score<120){
-
         time=600;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
     if (score >120 & score<200){
-
         time=450;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
     if (score >200){
-
         time=300;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
-
 
     robot.onclick = function (){
     pop(robot);
@@ -111,7 +102,7 @@ function createrobot(){
    if (score>120 & score<150) { 
     increaseSpeed=2
    }
-
+    
    else if (score>150 & score<200) { 
     increaseSpeed=3
    }
@@ -131,7 +122,6 @@ function createrobot(){
                                 // We need to add robot to the 'robots array but also keep track of where it is located in the array, to remove later ' 
    robot.index=robots.length;   //Setting the index to robots.length set it up for the next empty place in the array  ( length +1 because arrays are 0 based  )
    robots.push(robot);          //add item to the end of the array 
-
    updateScore();
 }
 
@@ -144,24 +134,19 @@ function pop(robot){
 
 function updateScore(){
     if (lives==4){
-
-        
         alertStatus=good;
     }
 
     else if (lives==3){
-
         field.style.backgroundImage="url('images/bg1.png')";
     }
 
     else if (lives==2){
-
         alertStatus=average;
         field.style.backgroundImage="url('images/bg2.png')";
     }
 
     else if (lives==1){
-
         alertStatus=bad;
         field.style.backgroundImage="url('images/bg3.png')";
     }
@@ -173,27 +158,22 @@ function updateScore(){
     }
 
     if (time==1000 || time==800) {
-
         difficulty=easy;
     }
 
     else if (time==700) {
-
         difficulty=medium;
     }
 
     else if (time==650) {
-
         difficulty=hard;
     }
 
     else if (time==600 || time==450  || time==300 ) {
-
         difficulty=hell;
     }
 
     else if (time==100) {
-
         difficulty=end;
     }
 
@@ -221,9 +201,7 @@ function animate(){
         if (top>=playField.height){
 
             if (lives>1){
-
                 audioWarning.play();
-
             }
             
             robots[robot.index]=null;
@@ -232,14 +210,12 @@ function animate(){
         }
 
         else if(lives==0){
-
             defeated=true;
             break;
         }
     }
 
-    if (defeated)
-    {  
+    if (defeated){  
         gameOver();
         pauseAudio(audioWarning);
         pauseAudio(bkMusic); 
@@ -260,17 +236,17 @@ function gameOver(){
     scoreDiv.innerHTML+="<h1> Game Over</h1>";
 }
 
-function removeRobots(){
+function removeRobots(){                     // remove all robots from array to start game again. 
     for (let i=0; i<robots.length; i++){
-
+        
         let robot=robots[i];
-
+        
         if (!robot){
             continue;
         }
 
         robot.parentNode.removeChild(robot);
     }
-
+    
     robots=[];
 }
