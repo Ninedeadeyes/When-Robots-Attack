@@ -63,7 +63,7 @@ function createrobot(){
 
     if (score >80 & score<100){
 
-        time=675;
+        time=650;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
@@ -177,7 +177,7 @@ function updateScore(){
         difficulty=easy;
     }
 
-    else if (time==700 || time==675) {
+    else if (time==700) {
 
         difficulty=medium;
     }
@@ -187,7 +187,7 @@ function updateScore(){
         difficulty=hard;
     }
 
-    else if (time==600 || time==500  || time==300 ) {
+    else if (time==600 || time==450  || time==300 ) {
 
         difficulty=hell;
     }
