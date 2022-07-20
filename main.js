@@ -61,23 +61,23 @@ function createrobot(){
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >80 & score<120){
+    if (score >80 & score<100){
 
         time=675;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >120 & score<150){
+    if (score >100 & score<120){
 
         time=600;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >150 & score<200){
+    if (score >120 & score<200){
 
-        time=500;
+        time=450;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
@@ -108,11 +108,11 @@ function createrobot(){
    robot.style.height=size+"px";
    
    let increaseSpeed=1
-   if (score>150 & score<180) { 
+   if (score>120 & score<150) { 
     increaseSpeed=2
    }
 
-   else if (score>180 & score<200) { 
+   else if (score>150 & score<200) { 
     increaseSpeed=3
    }
 
