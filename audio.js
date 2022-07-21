@@ -1,7 +1,7 @@
 export const audioZap= new Audio();
 
 audioZap.src="music/bang.wav";
-audioZap.volume = 0.1;
+audioZap.volume = 0.05;
 
 export const audioWarning= new Audio();
 
