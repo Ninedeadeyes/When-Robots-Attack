@@ -142,7 +142,7 @@ function createrobot(){
 
    }
 
-   let speed=Math.floor(Math.random()*increaseSpeed)+1;
+   let speed=Math.floor(Math.random()*increaseSpeed)+type.fixSpeed;
    robot.speed=speed;
 
    let playWidth=playField.width-size;
