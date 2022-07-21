@@ -70,7 +70,7 @@ function createrobot(){
     } 
 
     if (score >150){
-        time=400;
+        time=300;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
@@ -98,7 +98,7 @@ function createrobot(){
    }
     
    else if (score>200) { 
-    increaseSpeed=3
+    increaseSpeed=4
    }
 
    let speed=Math.floor(Math.random()*increaseSpeed)+1;
