@@ -1,5 +1,5 @@
 import { audioZap,audioWarning,audioEnding,pauseAudio,bkMusic } from "./audio.js";
-import{good,average,bad,failed,easy,medium,hard,hell,end} from "./info.js";
+import{good,average,bad,failed,easy,medium,hard,hell,end,mobile,pc } from "./info.js";
 
 let score=0;
 let lives=4;
@@ -12,22 +12,40 @@ let playField={
     height:500
 };
 
+let type;
+
 let robots=[];
 let interval;
 let button=document.getElementById("start");
 let field=document.getElementById("field");
+
+
 
 window.startGame=function(){
     showButton(false);
     pauseAudio(audioEnding); // stop ending music when start a new game 
     bkMusic.play();
     lives=4;
-    time=800;
+    time=type.startingTime;
     field.style.backgroundImage="url('images/bg.png')";
     interval=setInterval(createrobot,time);
     score=0;
     updateScore();
     animate();
+}
+
+let modeSelection=window.confirm("If using touchscreen click 'OK' or mouse click 'Cancel'");
+
+if (modeSelection===true){
+
+    type=mobile;
+
+}
+
+else {
+
+ type=pc;
+
 }
 
 function showButton(show){
@@ -46,31 +64,37 @@ function createrobot(){
    // robot.classList.add("robotCSS");  // just a personal reminder on how to add CSS class to div
 
     if (score >10 & score<40){
-        time=750;
+        time=type.firstChange;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
     if (score >40 & score<60){
-        time=700;
+        time=type.secondChange;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
     
     if (score >60 & score<80){
-        time=600;
+        time=type.thirdChange;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
     if (score >80 & score<180){
-        time=550;
+        time=type.fouthChange;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >180){
-        time=450;
+    if (score >180 & score<200){
+        time=type.fifthChange;
+        clearInterval(interval);
+        interval=setInterval(createrobot,time);
+    } 
+
+    if (score>200){
+        time=type.lastChange;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
@@ -88,17 +112,34 @@ function createrobot(){
    robot.style.backgroundRepeat="no-repeat";
    robot.style.backgroundSize="contain";
  
-   let size=35;
+   let size=type.robotSize;
    robot.style.width=size+"px";
    robot.style.height=size+"px";
    
-   let increaseSpeed=1
-   if (score>120 & score<200) { 
-    increaseSpeed=2
-   }
+   let increaseSpeed=type.intialSpeed;
+
+   if (type==mobile){
+
+
+    if (score>60 & score<200) { 
+        increaseSpeed=type.firstSpChange;
+       }
+        
+    else if (score>200) { 
+        increaseSpeed=type.secondSpChange;
+       }
     
-   else if (score>200) { 
-    increaseSpeed=3
+   }
+
+   else{
+    if (score>120 & score<200) { 
+        increaseSpeed=type.firstSpChange;
+       }
+        
+       else if (score>200) { 
+        increaseSpeed=type.secondSpChange;
+       }
+
    }
 
    let speed=Math.floor(Math.random()*increaseSpeed)+1;
@@ -147,19 +188,19 @@ function updateScore(){
         field.style.backgroundImage="url('images/bg4.png')";
     }
 
-    if (time==800 || time==750) {
+    if (time==type.startingTime || time==type.firstChange) {
         difficulty=easy;
     }
 
-    else if (time==700) {
+    else if (time==type.secondChange) {
         difficulty=medium;
     }
 
-    else if (time==600) {
+    else if (time==type.thirdChange) {
         difficulty=hard;
     }
 
-    else if (time==550 || time==450 ) {
+    else if (time==type.fouthChange || time==type.fifthChange||time==type.lastChange ) {
         difficulty=hell;
     }
 

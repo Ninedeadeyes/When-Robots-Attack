@@ -11,3 +11,24 @@ export const medium=modernFontColor("Large swarm right ahead !", "yellow");
 export const hard=modernFontColor("There are too many, run ! ", "red");
 export const hell=modernFontColor("AARRGGHHHHHHHH !!", "red");
 export const end=modernFontColor("The Machine has won","red");
+
+
+export class platform {
+    constructor (startingTime,robotSize,intialSpeed,firstChange,secondChange,thirdChange,fouthChange,fifthChange,lastChange,firstSpChange,secondSpChange){
+        this.startingTime=startingTime;
+        this.robotSize=robotSize;
+        this.intialSpeed=intialSpeed;
+        this.firstChange=firstChange;
+        this.secondChange=secondChange;
+        this.thirdChange=thirdChange;
+        this.fouthChange=fouthChange;
+        this.fifthChange=fifthChange;
+        this.lastChange=lastChange;
+        this.firstSpChange=firstSpChange;
+        this.secondSpChange=secondSpChange;
+    }
+}
+
+export const mobile= new platform(700,50,2,600,550,500,450,350,200,3,4);
+
+export const pc= new platform(800,35,1,750,700,600,550,450,400,2,3);
