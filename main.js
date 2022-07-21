@@ -34,7 +34,7 @@ window.startGame=function(){
     animate();
 }
 
-let modeSelection=window.confirm("If using touchscreen click 'OK' or mouse click 'Cancel' (Will Adjust Difficulty)");
+let modeSelection=window.confirm("If touchscreen click 'OK' or mouse click 'Cancel'");
 
 if (modeSelection===true){
     type=mobile;
