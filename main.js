@@ -63,20 +63,14 @@ function createrobot(){
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >100 & score<120){
+    if (score >100 & score<200){
         time=600;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >120 & score<200){
-        time=450;
-        clearInterval(interval);
-        interval=setInterval(createrobot,time);
-    } 
-
     if (score >200){
-        time=300;
+        time=500;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
@@ -94,21 +88,17 @@ function createrobot(){
    robot.style.backgroundRepeat="no-repeat";
    robot.style.backgroundSize="contain";
  
-   let size=35;
+   let size=50;
    robot.style.width=size+"px";
    robot.style.height=size+"px";
    
    let increaseSpeed=1
-   if (score>120 & score<150) { 
+   if (score>120 & score<200) { 
     increaseSpeed=2
    }
     
-   else if (score>150 & score<200) { 
-    increaseSpeed=3
-   }
-
    else if (score>200) { 
-    increaseSpeed=4
+    increaseSpeed=3
    }
 
    let speed=Math.floor(Math.random()*increaseSpeed)+1;
@@ -169,7 +159,7 @@ function updateScore(){
         difficulty=hard;
     }
 
-    else if (time==600 || time==450  || time==300 ) {
+    else if (time==600 || time==500 ) {
         difficulty=hell;
     }
 
