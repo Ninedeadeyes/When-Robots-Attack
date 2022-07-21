@@ -37,15 +37,11 @@ window.startGame=function(){
 let modeSelection=window.confirm("If using touchscreen click 'OK' or mouse click 'Cancel'");
 
 if (modeSelection===true){
-
     type=mobile;
-
 }
 
 else {
-
  type=pc;
-
 }
 
 function showButton(show){
