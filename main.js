@@ -63,14 +63,14 @@ function createrobot(){
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >80 & score<150){
+    if (score >80 & score<180){
         time=550;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >150){
-        time=300;
+    if (score >180){
+        time=450;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
@@ -98,7 +98,7 @@ function createrobot(){
    }
     
    else if (score>200) { 
-    increaseSpeed=4
+    increaseSpeed=3
    }
 
    let speed=Math.floor(Math.random()*increaseSpeed)+1;
@@ -159,7 +159,7 @@ function updateScore(){
         difficulty=hard;
     }
 
-    else if (time==550 || time==400 ) {
+    else if (time==550 || time==450 ) {
         difficulty=hell;
     }
 
