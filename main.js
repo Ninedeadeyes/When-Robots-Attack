@@ -51,26 +51,26 @@ function createrobot(){
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >40 & score<80){
+    if (score >40 & score<60){
         time=700;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
-
-    if (score >80 & score<100){
+    
+    if (score >60 & score<80){
         time=650;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >100 & score<200){
+    if (score >80 & score<150){
         time=600;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >200){
-        time=500;
+    if (score >150){
+        time=400;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
@@ -159,7 +159,7 @@ function updateScore(){
         difficulty=hard;
     }
 
-    else if (time==600 || time==500 ) {
+    else if (time==600 || time==400 ) {
         difficulty=hell;
     }
 
