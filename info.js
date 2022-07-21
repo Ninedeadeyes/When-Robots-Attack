@@ -14,7 +14,7 @@ export const end=modernFontColor("The Machine has won","red");
 
 
 export class platform {
-    constructor (startingTime,robotSize,intialSpeed,firstChange,secondChange,thirdChange,fouthChange,fifthChange,lastChange,firstSpChange,secondSpChange){
+    constructor (startingTime,robotSize,intialSpeed,firstChange,secondChange,thirdChange,fouthChange,fifthChange,lastChange,firstSpChange,secondSpChange,fixSpeed){
         this.startingTime=startingTime;
         this.robotSize=robotSize;
         this.intialSpeed=intialSpeed;
@@ -30,6 +30,6 @@ export class platform {
     }
 }
 
-export const mobile= new platform(700,50,3,500,450,400,350,300,200,4,5,2);
+export const mobile= new platform(700,50,3,550,500,450,400,300,200,4,5,2);
 
 export const pc= new platform(800,35,1,750,700,600,550,450,400,2,3,1);
