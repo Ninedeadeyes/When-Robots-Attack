@@ -88,7 +88,7 @@ function createrobot(){
    robot.style.backgroundRepeat="no-repeat";
    robot.style.backgroundSize="contain";
  
-   let size=50;
+   let size=40;
    robot.style.width=size+"px";
    robot.style.height=size+"px";
    
