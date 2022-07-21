@@ -4,17 +4,10 @@ A simple JavaScript Shooter in under 300 lines of JavaScript code.
 
 To play the game 
 
-( Mouse version ) 
- 
 https://ninedeadeyes.github.io/When-Robots-Attack/
-
-(Touch screen version ) 
-
-https://ninedeadeyes.github.io/When-Robots-Attack-mobile-/
  
-My main purpose of the project was to learn how to modularise in JavaScript but I also wanted to create a game that was was 'real time' as all previous JavaScript games have been turn based.   
-
-Will implement a difficulty CLASS in the future so that there will only need to be one version.  
+My main purpose of the project was to learn how to modularise and to use OOP(Class) in JavaScript but I also wanted to create a game that was was 'real time' as all previous JavaScript games have been turn based.   
+.  
 
 -All music written with Beepbox.
 
