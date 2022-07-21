@@ -22,7 +22,7 @@ window.startGame=function(){
     pauseAudio(audioEnding); // stop ending music when start a new game 
     bkMusic.play();
     lives=4;
-    time=1000;
+    time=800;
     field.style.backgroundImage="url('images/bg.png')";
     interval=setInterval(createrobot,time);
     score=0;
@@ -46,7 +46,7 @@ function createrobot(){
    // robot.classList.add("robotCSS");  // just a personal reminder on how to add CSS class to div
 
     if (score >10 & score<40){
-        time=800;
+        time=750;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
@@ -58,13 +58,13 @@ function createrobot(){
     } 
     
     if (score >60 & score<80){
-        time=650;
+        time=600;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
     if (score >80 & score<150){
-        time=600;
+        time=550;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
@@ -147,7 +147,7 @@ function updateScore(){
         field.style.backgroundImage="url('images/bg4.png')";
     }
 
-    if (time==1000 || time==800) {
+    if (time==800 || time==750) {
         difficulty=easy;
     }
 
@@ -155,11 +155,11 @@ function updateScore(){
         difficulty=medium;
     }
 
-    else if (time==650) {
+    else if (time==600) {
         difficulty=hard;
     }
 
-    else if (time==600 || time==400 ) {
+    else if (time==550 || time==400 ) {
         difficulty=hell;
     }
 
