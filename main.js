@@ -59,31 +59,31 @@ function createrobot(){
     field.appendChild(robot);   // Add div to the HTML document 
    // robot.classList.add("robotCSS");  // just a personal reminder on how to add CSS class to div
 
-    if (score >10 & score<40){
+    if (score >10 && score<40){
         time=type.firstChange;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >40 & score<60){
+    if (score >40 && score<60){
         time=type.secondChange;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
     
-    if (score >60 & score<80){
+    if (score >60 && score<80){
         time=type.thirdChange;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >80 & score<180){
+    if (score >80 && score<180){
         time=type.fouthChange;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
     } 
 
-    if (score >180 & score<200){
+    if (score >180 && score<200){
         time=type.fifthChange;
         clearInterval(interval);
         interval=setInterval(createrobot,time);
@@ -117,7 +117,7 @@ function createrobot(){
    if (type==mobile){
 
 
-    if (score>60 & score<200) { 
+    if (score>60 && score<200) { 
         increaseSpeed=type.firstSpChange;
        }
         
@@ -128,7 +128,7 @@ function createrobot(){
    }
 
    else{
-    if (score>120 & score<200) { 
+    if (score>120 && score<200) { 
         increaseSpeed=type.firstSpChange;
        }
         
