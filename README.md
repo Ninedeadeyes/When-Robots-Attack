@@ -17,3 +17,7 @@ My main purpose of the project was to learn how to modularise and use OOP(Class)
 
 Special thanks to Stephen J. Wolf (Author) 
 
+based of his game
+
+https://coding.stephenjwolf.com/cfk2/macode/bubblepop/bubblepop.html
+
