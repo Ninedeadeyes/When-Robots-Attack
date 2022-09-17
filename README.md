@@ -21,3 +21,13 @@ based of his game
 
 https://coding.stephenjwolf.com/cfk2/macode/bubblepop/bubblepop.html
 
+My version contain additional features such as
+
+1) My own artwork and music
+2) Score system, see different 'reports' as you progress through the game 
+3) Differculty progression, the more you score the harder it gets. ( Both speed and amount of enemies) 
+4) two differculty options depending if you are using mouse or touch screen ( implementation of OOP ) 
+5) Muliple lives with a text/visual display (warning message/forcefield) to represent it
+6) Game over music and 'death' screen. 
+7) Modularise some Javascript code relating to audio and 'data'( info).
+
