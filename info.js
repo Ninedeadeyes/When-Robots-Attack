@@ -1,7 +1,4 @@
-export function modernFontColor(str, color) {
-    return '<span style="color: ' + color + '">' + str + '</span>';
-}
-
+export let modernFontColor=(str,color)=> '<span style="color: ' + color + '">' + str + '</span>';
 export const good=modernFontColor("Green Alert ", "green");
 export const average=modernFontColor("Amber Alert", "yellow");
 export const bad=modernFontColor("Red Alert", "red");
@@ -11,7 +8,6 @@ export const medium=modernFontColor("Large swarm right ahead !", "yellow");
 export const hard=modernFontColor("There are too many, run ! ", "red");
 export const hell=modernFontColor("AARRGGHHHHHHHH !!", "red");
 export const end=modernFontColor("The Machine has won","red");
-
 
 export class platform {
     constructor (startingTime,robotSize,intialSpeed,firstChange,secondChange,thirdChange,fouthChange,fifthChange,lastChange,firstSpChange,secondSpChange){
@@ -30,5 +26,4 @@ export class platform {
 }
 
 export const mobile= new platform(600,50,3,500,450,400,350,300,200,4,5);
-
 export const pc= new platform(800,35,1,750,700,600,550,450,400,2,3);
