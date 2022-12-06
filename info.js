@@ -26,4 +26,4 @@ export class platform {
 }
 
 export const mobile= new platform(600,50,3,500,450,400,350,300,200,4,5);
-export const pc= new platform(900,35,1,800,700,600,550,450,400,2,3);
+export const pc= new platform(1000,35,1,900,800,700,600,550,450,2,3);
