@@ -29,7 +29,10 @@ h1{
 
 .headTitle{
     color: whitesmoke;
-    font-size: 30px;
+    font-size: 25px;
+
+    
+ 
 }
 
 #interface{
@@ -59,6 +62,7 @@ h1{
     position:relative;
     overflow:hidden; 
     cursor: crosshair;
+    margin-left:30px;      /* So that screen inline with header  */ 
 }
 
 #start{
@@ -77,7 +81,8 @@ h1{
 }
 
 #music{
-    top:600px;
+    top:525px;
     left:50px;
+    margin-left:30px;    /* So that screen inline with header  */ 
 }
 
