@@ -1,6 +1,6 @@
 # When-Robots-Attack
 
-A simple JavaScript Shooter in less than 300 lines of JavaScript Code. 
+A simple JavaScript Shooter in less than 250 lines of JavaScript Code. 
 
 To play the game 
 
