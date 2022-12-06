@@ -3,7 +3,7 @@ import{good,average,bad,failed,easy,medium,hard,hell,end,mobile,pc } from "./inf
 let score=0;
 let lives=4;
 let scoreDiv=document.querySelector("#score");
-let time=1000;
+let time;
 let alertStatus;
 let difficulty;
 let playField={width:400, height:500};
@@ -14,13 +14,7 @@ let button=document.querySelector("#start");
 let field=document.querySelector("#field");
 let modeSelection=window.confirm("If touchscreen click 'OK' or mouse click 'Cancel'");
 
-if (modeSelection===true){
-    type=mobile;
-}
-
-else {
- type=pc;
-}
+modeSelection===true ? type=mobile:type=pc;
 
 button.addEventListener("click", function onclick(e) {
     showButton(false);
@@ -35,44 +29,17 @@ button.addEventListener("click", function onclick(e) {
     animate();
   });
 
-let showButton=(show)=>{      
-    if (show){
-        button.style.display="block";
-    }
-
-    else{
-        button.style.display="none";
-    }
-}
+let showButton=show=> show===true ? button.style.display="block": button.style.display="none";   // no need for Parentheses  for single parameters
 
 let createRobot=()=>{
     let robot= document.createElement("div");  // create new div 
     field.appendChild(robot);   // Add div to the HTML document 
    // robot.classList.add("robotCSS");  // just a personal reminder on how to add CSS class to div
-   if (score >10 && score<40){
-        time=type.firstChange;
-    } 
-
-   if (score >40 && score<60){
-        time=type.secondChange;
-    } 
-    
-   if (score >60 && score<80){
-        time=type.thirdChange;
-    } 
-
-   if (score >80 && score<180){
-        time=type.fouthChange;
-    } 
-
-   if (score >180 && score<200){
-        time=type.fifthChange;
-    } 
-
-   if (score>200){
-        time=type.lastChange;
-    } 
-
+    score >10 && score<=40 ? time=type.firstChange:
+    score >40 && score<=60 ? time=type.secondChange:
+    score >60 && score<=80 ? time=type.thirdChange:
+    score >80 && score<=200 ? time=type.fifthChange:
+    score>200 && (time=type.lastChange); 
     clearInterval(interval);
     interval=setInterval(createRobot,time);
 
@@ -93,24 +60,13 @@ let createRobot=()=>{
    let increaseSpeed=type.intialSpeed;
 
    if (type==mobile){
-
-    if (score>60 && score<200) { 
-        increaseSpeed=type.firstSpChange;
-       }
-        
-    else if (score>200) { 
-        increaseSpeed=type.secondSpChange;
-       }
+       score>60 && score<=200 ? increaseSpeed=type.firstSpChange:
+       score>200 && (increaseSpeed=type.secondSpChange);
    }
 
    else{
-    if (score>120 && score<200) { 
-        increaseSpeed=type.firstSpChange;
-       }
-        
-       else if (score>200) { 
-        increaseSpeed=type.secondSpChange;
-       }
+        score>120 && score<=200? increaseSpeed=type.firstSpChange:
+        score>200 && (increaseSpeed=type.secondSpChange);
    }
 
    let speed=Math.floor(Math.random()*increaseSpeed)+1;
@@ -157,25 +113,11 @@ let updateScore=()=>{
         field.style.backgroundImage="url('images/bg4.png')";
     }
 
-    if (time==type.startingTime || time==type.firstChange) {
-        difficulty=easy;
-    }
-
-    else if (time==type.secondChange) {
-        difficulty=medium;
-    }
-
-    else if (time==type.thirdChange) {
-        difficulty=hard;
-    }
-
-    else if (time==type.fouthChange || time==type.fifthChange||time==type.lastChange ) {
-        difficulty=hell;
-    }
-
-    else if (time==100) {
-        difficulty=end;
-    }
+    time===type.startingTime || time==type.firstChange ? difficulty=easy:
+    time===type.secondChange ? difficulty=medium:
+    time===type.thirdChange ?  difficulty=hard:
+    time===type.fouthChange || time==type.fifthChange||time==type.lastChange ? difficulty=hell:
+    time===100 &&(difficulty=end);
 
     let text="Kill count:"+score+"    ";
     text+="Shield: " +alertStatus;

@@ -1,4 +1,4 @@
-export let modernFontColor=(str,color)=> '<span style="color: ' + color + '">' + str + '</span>';
+export let modernFontColor=(str,color)=> '<span style="color: ' + color + '">' + str + '</span>';  //no curly braces because produce an expression 
 export const good=modernFontColor("Green Alert ", "green");
 export const average=modernFontColor("Amber Alert", "yellow");
 export const bad=modernFontColor("Red Alert", "red");
@@ -25,5 +25,7 @@ export class platform {
     }
 }
 
+
+
 export const mobile= new platform(600,50,3,500,450,400,350,300,200,4,5);
-export const pc= new platform(800,35,1,750,700,600,550,450,400,2,3);
+export const pc= new platform(900,35,1,800,700,600,550,450,400,2,3);
