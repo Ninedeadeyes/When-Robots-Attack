@@ -2,10 +2,6 @@
 
 A simple JavaScript Shooter in less than 250 lines of JavaScript Code. 
 
-To play the game 
-
-https://ninedeadeyes.github.io/JavaScript-Mini-Arcade/
- 
 My main purpose of the project was to learn how to modularise and use OOP(Class) in JavaScript but I also wanted to create a game that was 'real time' as all previous JavaScript games have been turn based.   
 .  
 
@@ -32,3 +28,10 @@ My version contain additional features such as
 7) Modularise some Javascript code relating to audio and 'data'( info).
 8) General Refactoring including updated ES features like Arrow Functions, queryselector (),Template strings , Ternary Operator. 
 
+Play the game at 
+
+https://ninedeadeyes.github.io/When-Robots-Attack/
+
+Check out my other games at
+
+https://ninedeadeyes.github.io/JavaScript-Mini-Arcade/
