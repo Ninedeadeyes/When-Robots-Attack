@@ -26,7 +26,9 @@ My version contain additional features such as
 5) Muliple lives with a text/visual display (warning message/forcefield) to represent it
 6) Game over music and 'death' screen. 
 7) Modularise some Javascript code relating to audio and 'data'( info).
-8) General Refactoring including updated ES features like Arrow Functions, queryselector (),Template strings , Ternary Operator. 
+8) Different Enemy types
+9) Target Cross instead of pointer 
+10) General Refactoring including updated ES features like Arrow Functions, queryselector (),Template strings , Ternary Operator. 
 
 Play the game at 
 
